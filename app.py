@@ -64,13 +64,13 @@ def commentary(win,lose):
 
     texts=[
 
-    f"{win['name']}の必殺技（ひっさつわざ）が炸裂（さくれつ）！",
+    f"{win['name']}の必殺技が炸裂（さくれつ）！",
 
-    f"激闘（げきとう）の末（すえ）、{win['name']}が勝利（しょうり）！",
+    f"激闘（げきとう）の末（すえ）、{win['name']}が勝利！",
 
-    f"{lose['name']}も強敵（きょうてき）だったが、{win['name']}が上回（うわまわ）った！",
+    f"{lose['name']}も強敵だったが、{win['name']}が上回った！",
 
-    f"会場（かいじょう）が大盛（おおも）り上（あ）がり！{win['name']}の勝利！"
+    f"会場が大盛り上がり！{win['name']}の勝利！"
 
     ]
 
@@ -96,7 +96,7 @@ st.markdown(
 
 
 st.write(
-    "自分（じぶん）だけの最強（さいきょう）キャラクターを作（つく）って戦（たたか）わせよう！"
+    "自分だけの最強キャラクターを作って戦わせよう！"
 )
 
 
@@ -106,28 +106,28 @@ st.write(
 # -------------------------
 
 st.header(
-    "① キャラクター登録（とうろく）"
+    "キャラクター登録"
 )
 
 
 name=st.text_input(
-    "名前（なまえ）"
+    "キャラの名前"
 )
 
 
 image=st.file_uploader(
-    "画像（がぞう）",
+    "画像",
     type=["png","jpg","jpeg"]
 )
 
 
 description=st.text_area(
-    "能力（のうりょく）説明（せつめい）"
+    "能力説明"
 )
 
 
 
-if st.button("登録（とうろく）"):
+if st.button("登録"):
 
 
     if name:
@@ -164,7 +164,7 @@ if st.button("登録（とうろく）"):
 # -------------------------
 
 st.header(
-    "参加（さんか）キャラクター"
+    "参加キャラクター"
 )
 
 
@@ -191,12 +191,12 @@ if len(st.session_state.characters)>=2:
 
 
     st.header(
-        "② 総当（そうあ）たりバトル"
+        "総当たりバトル"
     )
 
 
     if st.button(
-        "大会開始（たいかいかいし）"
+        "大会開始"
     ):
 
 
@@ -233,7 +233,7 @@ if len(st.session_state.characters)>=2:
 
 
             st.write(
-                "🏆 勝者（しょうしゃ）：",
+                "🏆 勝者：",
                 winner["name"]
             )
 
@@ -248,7 +248,7 @@ if len(st.session_state.characters)>=2:
 
 
         st.header(
-            "🏆 最終（さいしゅう）ランキング"
+            "🏆 最終ランキング"
         )
 
 
@@ -263,8 +263,8 @@ if len(st.session_state.characters)>=2:
 
             st.write(
                 i+1,
-                "位（い）",
+                "位",
                 item[0],
                 item[1],
-                "勝（しょう）"
+                "勝"
             )
